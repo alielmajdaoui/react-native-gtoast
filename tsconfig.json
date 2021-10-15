@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "removeComments": true,
+        "outDir": "dist",
+        "allowJs": true,
+        "esModuleInterop": true,
+        "jsx": "react-native",
+        "lib": ["DOM", "ESNext"],
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "target": "ESNext",
+        "declaration": true,
+        "sourceMap": true
+    },
+    "exclude": [
+        "node_modules",
+        "babel.config.js",
+        "metro.config.js",
+        "jest.config.js",
+        "src/styles/app.ts",
+        "src/index.dev.ts",
+        "src/Example.tsx"
+    ]
+}

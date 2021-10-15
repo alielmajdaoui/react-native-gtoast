@@ -1,0 +1,64 @@
+{
+    "name": "react-native-gtoast",
+    "main": "src/index.dev.ts",
+    "version": "0.0.1",
+    "description": "Global Toast for react-native",
+    "author": "Ali El Majdaoui <alielmajdaouiee@gmail.com> https://github.com/alielmajdaoui",
+    "homepage": "https://github.com/alielmajdaoui/react-native-gtoast#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/alielmajdaoui/react-native-gtoast"
+    },
+    "bugs": {
+        "url": "https://github.com/alielmajdaoui/react-native-gtoast/issues"
+    },
+    "keywords": [
+        "toast",
+        "global",
+        "alert",
+        "react-native"
+    ],
+    "license": "MIT",
+    "scripts": {
+        "start": "npm run config:dev && expo start",
+        "ios": "npm run config:dev && expo start --ios",
+        "build": "rm -rf dist/ && node_modules/.bin/tsc",
+        "config:dev": "json -I -4 -f package.json -e 'this.main=\"src/index.dev.ts\"'",
+        "config:npm": "json -I -4 -f package.json -e 'this.main=\"dist/index.jsx\"'",
+        "lint": "eslint .",
+        "verify": "npm run lint && npm run build",
+        "prepublishOnly": "npm run verify && npm run config:npm",
+        "postpublish": "npm run config:dev"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run lint && node_modules/.bin/tsc --noEmit"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "dependencies": {
+        "expo": "~42.0.0",
+        "expo-status-bar": "~1.0.4",
+        "nanoid": "^3.1.30",
+        "react": "16.13.1",
+        "react-dom": "16.13.1",
+        "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+        "react-native-safe-area": "^0.5.1",
+        "react-native-safe-area-context": "^3.2.0",
+        "react-native-web": "~0.13.12"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.9.0",
+        "@react-native-community/eslint-config": "^3.0.0",
+        "@types/react": "~16.9.35",
+        "@types/react-native": "~0.63.2",
+        "@typescript-eslint/eslint-plugin": "^4.28.2",
+        "@typescript-eslint/parser": "^4.28.2",
+        "eslint": "^7.30.0",
+        "husky": "^4.3.8",
+        "json": "^11.0.0",
+        "typescript": "~4.0.0"
+    }
+}
