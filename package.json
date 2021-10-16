@@ -1,7 +1,7 @@
 {
     "name": "react-native-gtoast",
     "main": "src/index.dev.ts",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Global Toast for react-native",
     "author": "Ali El Majdaoui <alielmajdaouiee@gmail.com> https://github.com/alielmajdaoui",
     "homepage": "https://github.com/alielmajdaoui/react-native-gtoast#readme",
