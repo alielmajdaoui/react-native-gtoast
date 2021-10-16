@@ -7,13 +7,16 @@ const FADE_IN = 1;
 const FADE_OUT = 0;
 const FADE_IN_DURATION = 500;
 const FADE_OUT_DURATION = 1400;
+const DURATION_DEFAULT = 3000;
 
 type Props = {
     onRemove: (randId: string) => void;
     randId: string;
-    id: string | null;
     text: string;
-    duration: number;
+} & typeof defaultProps;
+
+const defaultProps = {
+    duration: DURATION_DEFAULT,
 };
 
 const Toast = ({ onRemove, randId, text, duration }: Props) => {
@@ -75,5 +78,7 @@ const Toast = ({ onRemove, randId, text, duration }: Props) => {
         </Animated.View>
     );
 };
+
+Toast.defaultProps = defaultProps;
 
 export default Toast;

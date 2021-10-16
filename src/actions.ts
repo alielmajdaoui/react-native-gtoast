@@ -2,15 +2,15 @@ import type { ADD_TOAST_ACTION, REMOVE_TOAST_ACTION } from './types';
 
 export const addToast = (
     randId: string,
-    id: string | null,
     text: string,
-    duration: number
+    id?: string,
+    duration?: number
 ): ADD_TOAST_ACTION => ({
     type: 'ADD_TOAST',
     toast: {
         randId,
-        id,
         text,
+        id,
         duration,
     },
 });

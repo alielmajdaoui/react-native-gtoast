@@ -1,22 +1,16 @@
 export type Toast = {
     randId: string;
-    id: string | null;
     text: string;
-    duration: number;
+    id?: string;
+    duration?: number;
 };
 
 export type ToastOptions = {
-    id: string | null;
-    duration: number | null;
+    id?: string;
+    duration?: number;
 };
 
-export type ShowToastPayload = {
-    text: string;
-    id: string | null;
-    duration: number;
-};
-
-export type ShowToast = (data: ShowToastPayload) => void;
+export type ShowToast = (text: string, options?: ToastOptions) => void;
 
 export type ExternalMethods = {
     showToast: ShowToast;

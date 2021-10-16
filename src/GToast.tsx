@@ -13,7 +13,7 @@ import { reducer, initialState } from './reducer';
 import { addToast, removeToast } from './actions';
 import Toast from './Toast';
 import * as styles from './styles/gtoast';
-import type { GToastProps, ShowToastPayload } from './types';
+import type { GToastProps, ToastOptions } from './types';
 
 const window = Dimensions.get('window');
 
@@ -65,11 +65,14 @@ export const GToast: React.FunctionComponent<GToastProps> = forwardRef(
             dispatch(removeToast(randId));
         }, []);
 
-        const handleShowToast = useCallback((data: ShowToastPayload) => {
-            const { id, duration, text } = data;
-
-            dispatch(addToast(nanoid(), id, text, duration));
-        }, []);
+        const handleShowToast = useCallback(
+            (text: string, options?: ToastOptions) => {
+                dispatch(
+                    addToast(nanoid(), text, options?.id, options?.duration)
+                );
+            },
+            []
+        );
 
         useImperativeHandle(
             ref,
@@ -129,7 +132,6 @@ export const GToast: React.FunctionComponent<GToastProps> = forwardRef(
                             <Toast
                                 key={toast.randId}
                                 randId={toast.randId}
-                                id={toast.id}
                                 text={toast.text}
                                 duration={toast.duration}
                                 onRemove={handleRemoveToast}
