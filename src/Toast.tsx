@@ -41,8 +41,6 @@ const Toast = ({ onRemove, randId, text, duration }: Props) => {
     }, [animateToast]);
 
     const fadeOut = useCallback(() => {
-        console.log('> isRemoving:', isRemoving.current);
-
         if (isRemoving.current) {
             return;
         }
