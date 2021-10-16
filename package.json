@@ -24,7 +24,7 @@
         "ios": "npm run config:dev && expo start --ios",
         "build": "rm -rf dist/ && node_modules/.bin/tsc",
         "config:dev": "json -I -4 -f package.json -e 'this.main=\"src/index.dev.ts\"'",
-        "config:npm": "json -I -4 -f package.json -e 'this.main=\"dist/index.jsx\"'",
+        "config:npm": "json -I -4 -f package.json -e 'this.main=\"dist/index.js\"'",
         "lint": "eslint .",
         "verify": "npm run lint && npm run build",
         "prepublishOnly": "npm run verify && npm run config:npm",
