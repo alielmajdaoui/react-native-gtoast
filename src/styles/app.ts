@@ -4,9 +4,6 @@ export default StyleSheet.create({
     container: {
         flex: 1,
     },
-    text: {
-        fontSize: 19,
-    },
     buttonContainer: {
         marginHorizontal: 10,
         marginBottom: 20,
@@ -22,5 +19,14 @@ export default StyleSheet.create({
     },
     scrollView: {
         marginHorizontal: 10,
+    },
+    text: {
+        fontSize: 19,
+    },
+    textInput: {
+        marginBottom: 20,
+        padding: 10,
+        fontSize: 20,
+        borderWidth: 1,
     },
 });

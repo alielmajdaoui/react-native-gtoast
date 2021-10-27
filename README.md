@@ -1,6 +1,14 @@
 # react-native-gtoast
 A React Native Global Toast that can be called from anywhere within your project.
 
+<a href="https://user-images.githubusercontent.com/32100313/139118903-4a7e2fab-d087-4d75-959c-84280113ecc2.gif"><img src="https://user-images.githubusercontent.com/32100313/139118903-4a7e2fab-d087-4d75-959c-84280113ecc2.gif" height="600" alt="react-native-gtoast" /></a>
+
+## Features
+
+- Toasts can be shown outside of React Components.
+- Toasts can be unique.
+- Keyboard sensitive. (No keyboard overlay)
+
 ## Why Another Toast Package?
 
 I needed a global Toast that I can call from anywhere within my project (similarly to `Alert.alert(title, message?, buttons?, options?)`) and especially from Redux async actions (Redux Thunk) whereas most of the existing Toast packages require to add a Toast component inside every component you want it display a toast and set the Toast component a `ref`to be used to interact with it. Thus, it's going to be hard to access it from a Redux Thunk action.

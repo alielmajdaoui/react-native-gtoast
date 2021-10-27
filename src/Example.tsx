@@ -1,5 +1,11 @@
 import React from 'react';
-import { Text, SafeAreaView, TouchableOpacity, ScrollView } from 'react-native';
+import {
+    Text,
+    SafeAreaView,
+    TouchableOpacity,
+    ScrollView,
+    TextInput,
+} from 'react-native';
 import { GToastContainer, showToast } from './index';
 import styles from './styles/app';
 
@@ -17,13 +23,13 @@ export default function App() {
             <TouchableOpacity
                 style={styles.buttonContainer}
                 onPress={() => {
-                    showToast('I am a unique Toast with id = registration', {
-                        id: 'registration',
+                    showToast('I am a unique Toast with id = register-toast', {
+                        id: 'register-toast',
                         duration: 1000,
                     });
                 }}>
                 <Text style={styles.buttonText}>
-                    Show Toast for Content: "registration"
+                    Show Unique Toast: register-toast
                 </Text>
             </TouchableOpacity>
 
@@ -33,6 +39,11 @@ export default function App() {
                         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis lacus a sapien suscipit dapibus nec ac massa. Duis sed est interdum quam sagittis elementum sed in tellus. Sed eleifend vehicula metus, feugiat porttitor ex accumsan eu. Praesent aliquam porttitor ullamcorper. Vestibulum faucibus quam vel augue commodo volutpat. Morbi porttitor diam faucibus massa condimentum varius. Praesent volutpat dui lectus. Suspendisse ac nisl tristique, euismod nulla ac, pulvinar dolor. Vestibulum elementum sagittis mauris at dignissim. Etiam suscipit laoreet nibh vel lacinia. Donec ex arcu, faucibus in molestie tempor, pellentesque eget magna. Donec ullamcorper dignissim sollicitudin.\n'
                     }
                 </Text>
+
+                <TextInput
+                    style={styles.textInput}
+                    placeholder={'Type something'}
+                />
 
                 <Text style={styles.text}>
                     {
