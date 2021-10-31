@@ -6,9 +6,13 @@ import type {
     GToastContainerRef,
 } from './types';
 
+const onRef = (ref) => {
+	GToastContainer.ref = ref
+};
+
 const GToastContainer: React.FunctionComponent<GToastContainerProps> &
     GToastContainerRef = (props): JSX.Element => {
-    return <GToast {...props} ref={(ref) => (GToastContainer.ref = ref)} />;
+    return <GToast {...props} ref={onRef} />;
 };
 
 GToastContainer.ref = null;
